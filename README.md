@@ -20,3 +20,23 @@ most important part. Add your answer to this markdown file.
 
 Implement a function to convert an adjacency matrix to an adjacency list and
 analyze it as above.
+
+## My runtime analysis for my implementation:
+I've concluded that the runtime for my implementation is $O(E^2)$. In a worst-case scenario
+the runtime is the same but in a best-case scenario the runtime would be $O(E)$. In a best-case
+scenario there would only be a single node that connects to itself, but even in a situation with multiple 
+nodes that still only connect to themselves or have one connection to one other node then every node only
+has at most one element to consider. This means that even though we have nested for loops, the inner loop
+would run in constant time as it merely checks a single element, thus the best-case runtime is simply
+the number of edges (or the number of vertices as in this case that number would be the same). in the
+average and worst-case scenarios each node would have at least if not more than one node it's connected
+to, meaning that in these situations the inner for loop would run more than once. 
+
+Essentially in a non-best-case scenario the outer loop iterates V (vertices) times, the inner loop will
+iterate 1 to E times for the given vertex, but the indexOf() function is also called during the inner 
+loop meaning that it will iterate through the keys of the graph, so the runtime of the inner loop is 
+actually E for the given vertex plus up to V for the indexOf() call, so the inner loop's runtime is
+$O(E + E*E)$. Therefore the total runtime of the implementation is $O(E^2)$
+
+
+
