@@ -1,5 +1,5 @@
 
-function convertToAdjMatrix(graph) {
+function convertToAdjList(graph) {
     var numNodes = graph.length;
     // initialize matrix values with zeros
     var matrix = new Array(numNodes).fill(0).map(() => new Array(numNodes).fill(0));
